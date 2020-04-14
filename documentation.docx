@@ -1,0 +1,79 @@
+documentation for stock analysis project
+
+head(sm)
+      SYMBOL SERIES     OPEN     HIGH      LOW    CLOSE     LAST PREVCLOSE
+1  20MICRONS     EQ    37.80    37.80    36.15    36.85    37.40     37.05
+2 3IINFOTECH     EQ     4.10     4.85     4.00     4.55     4.65      4.05
+3    3MINDIA     EQ 13425.15 13469.55 12920.00 13266.70 13300.00  13460.55
+4   A2ZINFRA     EQ    41.30    43.00    41.25    42.00    41.90     41.50
+5 AARTIDRUGS     EQ   539.90   539.90   520.00   521.85   522.20    536.55
+6   AARTIIND     EQ   890.95   894.90   876.90   891.30   890.00    890.00
+  TOTTRDQTY  TOTTRDVAL TOTALTRADES         ISIN  TIMESTAMP
+1     27130   994657.9         202 INE144J01027 2017-06-28
+2  20157058 92148517.7        7353 INE748C01020 2017-06-28
+3      2290 30304923.4         748 INE470A01017 2017-06-28
+4    606403 25531181.8        3418 INE619I01012 2017-06-28
+5      8560  4508881.6         569 INE767A01016 2017-06-28
+6     39201 34825375.6        2778 INE769A01020 2017-06-28
+> 
+
+
+ summary(sm)
+    SYMBOL             SERIES               OPEN               HIGH        
+ Length:1566        Length:1566        Min.   :    0.20   Min.   :    0.2  
+ Class :character   Class :character   1st Qu.:   56.55   1st Qu.:   57.8  
+ Mode  :character   Mode  :character   Median :  166.65   Median :  171.8  
+                                       Mean   :  509.15   Mean   :  517.3  
+                                       3rd Qu.:  473.66   3rd Qu.:  481.0  
+                                       Max.   :26699.95   Max.   :27310.0  
+      LOW               CLOSE               LAST            PREVCLOSE       
+ Min.   :    0.10   Min.   :    0.15   Min.   :    0.15   Min.   :    0.15  
+ 1st Qu.:   55.16   1st Qu.:   56.10   1st Qu.:   56.23   1st Qu.:   55.80  
+ Median :  165.50   Median :  167.00   Median :  167.45   Median :  165.60  
+ Mean   :  502.31   Mean   :  510.80   Mean   :  510.56   Mean   :  509.34  
+ 3rd Qu.:  463.65   3rd Qu.:  472.56   3rd Qu.:  473.39   3rd Qu.:  475.16  
+ Max.   :26400.00   Max.   :27224.85   Max.   :27141.00   Max.   :26661.05  
+   TOTTRDQTY           TOTTRDVAL          TOTALTRADES           ISIN          
+ Min.   :        1   Min.   :8.200e+01   Min.   :     1.0   Length:1566       
+ 1st Qu.:    13370   1st Qu.:1.563e+06   1st Qu.:   207.2   Class :character  
+ Median :    65104   Median :1.084e+07   Median :  1048.0   Mode  :character  
+ Mean   :  1146352   Mean   :1.772e+08   Mean   :  6747.3                     
+ 3rd Qu.:   425257   3rd Qu.:8.019e+07   3rd Qu.:  5292.0                     
+ Max.   :185475558   Max.   :5.012e+09   Max.   :140286.0                     
+  TIMESTAMP        
+ Length:1566       
+ Class :character  
+ Mode  :character  
+
+
+str(datacomp)
+
+'data.frame':	783 obs. of  5 variables:
+ $ SYMBOL    : chr  "20MICRONS" "3IINFOTECH" "3MINDIA" "A2ZINFRA" ...
+ $ SERIES    : chr  "EQ" "EQ" "EQ" "EQ" ...
+ $ CLOSE.x   : num  36.85 4.55 13266.7 42 521.85 ...
+ $ CLOSE.y   : num  36.85 4.55 13266.7 42 521.85 ...
+ $ per_change: num  0 0 0 0 0 0 0 0 0 0 ...
+
+> #Best performing 5 stocks
+> head(datacomp,5)
+
+      SYMBOL SERIES  CLOSE.x  CLOSE.y per_change
+1  20MICRONS     EQ    36.85    36.85          0
+2 3IINFOTECH     EQ     4.55     4.55          0
+3    3MINDIA     EQ 13266.70 13266.70          0
+4   A2ZINFRA     EQ    42.00    42.00          0
+5 AARTIDRUGS     EQ   521.85   521.85          0
+> 
+
+> #Worst performing 5 stocks
+> tail(datacomp,5)
+
+       SYMBOL SERIES CLOSE.x CLOSE.y per_change
+779 ZODJRDMKJ     EQ   32.30   32.30          0
+780     ZUARI     EQ  397.40  397.40          0
+781 ZUARIGLOB     EQ  130.75  130.75          0
+782 ZYDUSWELL     EQ  844.95  844.95          0
+783     ZYLOG     EQ    3.75    3.75          0
+
+
